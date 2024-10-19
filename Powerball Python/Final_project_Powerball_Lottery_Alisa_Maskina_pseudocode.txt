@@ -1,0 +1,131 @@
+//This program simulates the powerball lottery.
+
+
+Program START
+
+IMPORT random module
+PRINT '''Powerball Lottery, by Al Sweigart al@inventwithpython.com
+Each powerball lottery ticket costs $2. The jackpot for this game
+is $1.586 billion! It doesn't matter what the jackpot is, though,
+because the odds are 1 in 292,201,338, so you won't win. 
+This simulation gives you the thrill of playing without wasting money.
+ '''
+FUNCTION lottery()
+{
+	WHILE True
+	{
+		PRINT 'Enter 5 different numbers from 1 to 69, with spaces between'
+		PRINT 'each number. (For example: 5 17 23 42 50)'
+		variable response = USERINPUT
+		variable numbers = a list made from the string response by separating the elements of the string separated by spaces
+		IF length of numbers is NOT equal to 5
+		{
+			PRINT 'Please enter 5 numbers, separated by spaces.'
+			CONTINUE
+		}	
+		TRY
+		{
+			FOR i = 0 to 4
+			{
+				numbers list element at index i = INTEGER(numbers list element at index i)
+			}
+		}
+		EXCEPT ValueError
+		{
+			PRINT 'Please enter numbers, like 27, 35, or 62.'
+			CONTINUE
+		}
+		FOR i = 0 to 4
+		{
+			IF numbers list element at index i is NOT between 1 and 69
+			{
+				PRINT 'The numbers must all be between 1 and 69.'
+				CONTINUE
+			}
+		}
+		IF length of set made of list numbers is NOT 5
+		{
+			PRINT 'You must enter 5 different numbers.'
+			CONTINUE
+		}
+		BREAK
+	}
+	WHILE True
+	{
+		PRINT 'Enter the powerball number from 1 to 26.'
+		variable response = USERINPUT
+		TRY
+		{
+			variable powerball = INTEGER(response)
+		}	
+		EXCEPT ValueError
+		{
+			PRINT 'Please enter a number, like 3, 15, or 22.'
+			CONTINUE
+		}	
+		IF powerball is NOT between 1 and 26
+		{
+			PRINT 'The powerball number must be between 1 and 26.'
+			CONTINUE
+		}
+		BREAK
+	}
+	WHILE True
+	{
+		PRINT 'How many times do you want to play? (Max: 1000000)'
+		variable response = USERINPUT
+		TRY
+		{
+			variable numPlays = INTEGER(response)
+		}
+		EXCEPT ValueError
+		{
+			PRINT 'Please enter a number, like 3, 15, or 22000.'
+			CONTINUE
+		}
+		IF numPlays is NOT between 1 and 1000000
+		{
+			PRINT 'You can play between 1 and 1000000 times.'
+			CONTINUE
+		}
+		BREAK
+	}
+	variable price = '$' + STRING(2*numPlays)
+	PRINT 'It costs "price" to play "numPlays" times, but don't'
+	PRINT 'worry. I'm sure you'll win it all back.'
+	INPUT 'Press Enter to start...'
+	variable possibleNumbers = list of numbers from 1 to 70
+	FOR i = 0 to numPlays-1
+	{
+		shuffle list possibleNumbers randomly
+		variable winningNumbers = list of the first five elements of the list possibleNumbers
+		variable winningPowerball = random number between 1 and 26
+		PRINT 'The winning numbers are: '
+		variable allWinningNums = ''
+		FOR i = 0 to 4
+		{
+			allWinningNums = allWinningNums + STRING(winningNumbers list elememt at index i) + ' '
+		}
+		allWinningNums = allWinningNums + 'and' + STRING(winningPowerball)
+		PRINT 'string allWinningNums 21 characters long'
+		IF set made of list numbers = set made of list winningNumbers AND powerball = winningPowerball
+		{
+			PRINT ''
+			PRINT 'You have won the Powerball Lottery! Congratulations,'
+			PRINT 'you would be a billionaire if this was real!'
+			BREAK
+		}
+		ELSE
+		{
+			PRINT ' You lost.'
+		}
+	}
+	PRINT 'You have wasted "price"'
+	PRINT 'Thanks for playing!'
+}
+IF the file is not imported as a module
+{
+	use FUNCTION lottery()
+}
+
+Program END

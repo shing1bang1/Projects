@@ -1,0 +1,60 @@
+body {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #e5ecfb;
+}
+  
+.wallet-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+  
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #3a558e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+  
+button:hover {
+  background-color: #0f2b64;
+}
+  
+input, select {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+  
+#transaction-list {
+  list-style: none;
+  padding: 0;
+}
+  
+#rates-display {
+  text-align: left;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+  
+#rates-list {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.convert-text {
+  display: inline-block;
+}

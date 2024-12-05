@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wallet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wallet-container">
+    <h1>Digital Wallet</h1>
+
+
+    <div id="balance-section">
+      <p>Current Balance (CAD): <span id="balance">$0.00</span></p>
+      <button id="deposit-btn">Deposit</button>
+      <button id="withdraw-btn">Withdraw</button>
+    </div>
+
+
+    <div id="transaction-section">
+      <h2>Transactions:</h2>
+      <ul id="transaction-list"></ul>
+    </div>
+
+
+    <div id="conversion-section">
+      <h2>Currency Converter</h2>
+      <input type="number" id="amount" placeholder="Amount">
+      <p class="convert-text">to</p>
+      <select id="currency"></select>
+      <button id="convert-btn">Convert</button>
+      <p id="converted-amount"></p>
+    
+
+      <button id="rates-btn">Show Exchange Rates</button>
+      <div id="rates-display" style="display: none;">
+        <h3>Exchange Rates</h3>
+        <ul id="rates-list"></ul>
+      </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
